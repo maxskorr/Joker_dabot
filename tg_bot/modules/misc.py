@@ -143,8 +143,8 @@ def stickerid(bot: Bot, update: Update):
     if msg.reply_to_message and msg.reply_to_message.sticker:
         update.effective_message.reply_text("Hello " +
                                             "[{}](tg://user?id={})".format(msg.from_user.first_name, msg.from_user.id)
-                                            + ", The sticker id you are replying is :\n```" + 
-                                            escape_markdown(msg.reply_to_message.sticker.file_id) + "```",
+                                            + ", The sticker id you are replying is :\n" + 
+                                            "```{}```".format(msg.reply_to_message.sticker.file_id),
                                             parse_mode=ParseMode.MARKDOWN)
     else:
         update.effective_message.reply_text("Hello " + "[{}](tg://user?id={})".format(msg.from_user.first_name,
