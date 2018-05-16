@@ -405,6 +405,8 @@ __help__ = """
  - /slap: slap a user, or get slapped if not a reply.
  - /time <place>: gives the local time at the given place.
  - /info: get information about a user.
+ - /stickerid: reply sticker message to get id sticker.
+ - /getsticker: reply sticker message to get sticker image.
 
  - /markdownhelp: quick summary of how markdown works in telegram - can only be called in private chats.
 """
