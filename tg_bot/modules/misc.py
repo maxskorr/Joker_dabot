@@ -352,11 +352,23 @@ def get_time(bot: Bot, update: Update, args: List[str]):
 def echo(bot: Bot, update: Update):
     args = update.effective_message.text.split(None, 1)
     message = update.effective_message
+    message.delete()
+    bot.sendChatAction(update.effective_chat.id, "typing") # Bot typing before send message
     if message.reply_to_message:
         message.reply_to_message.reply_text(args[1])
     else:
         message.reply_text(args[1], quote=False)
+
+@run_async
+def stiker(bot: Bot, update: Update):
+    chat_id = update.effective_chat.id
+    args = update.effective_message.text.split(None, 1)
+    message = update.effective_message
     message.delete()
+    if message.reply_to_message:
+        bot.sendSticker(chat_id, args[1], reply_to_message_id=message.reply_to_message.message_id)
+    else:
+        bot.sendSticker(chat_id, args[1])
 
 
 MARKDOWN_HELP = """
@@ -425,6 +437,7 @@ STICKERID_HANDLER = DisableAbleCommandHandler("stickerid", stickerid)
 GETSTICKER_HANDLER = DisableAbleCommandHandler("getsticker", getsticker)
 
 ECHO_HANDLER = CommandHandler("echo", echo, filters=Filters.user(OWNER_ID))
+STIKER_HANDLER = CommandHandler("stiker", stiker, filters=Filters.user(OWNER_ID))
 MD_HELP_HANDLER = CommandHandler("markdownhelp", markdown_help, filters=Filters.private)
 
 STATS_HANDLER = CommandHandler("stats", stats, filters=CustomFilters.sudo_filter)
@@ -438,5 +451,6 @@ dispatcher.add_handler(INFO_HANDLER)
 dispatcher.add_handler(STICKERID_HANDLER)
 dispatcher.add_handler(GETSTICKER_HANDLER)
 dispatcher.add_handler(ECHO_HANDLER)
+dispatcher.add_handler(STIKER_HANDLER)
 dispatcher.add_handler(MD_HELP_HANDLER)
 dispatcher.add_handler(STATS_HANDLER)
