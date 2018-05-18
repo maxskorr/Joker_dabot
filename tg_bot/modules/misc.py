@@ -3,7 +3,7 @@ import json
 import random
 from datetime import datetime
 from typing import Optional, List
-
+import time
 import requests
 from telegram import Message, Chat, Update, Bot, MessageEntity
 from telegram import ParseMode
@@ -375,6 +375,13 @@ def stiker(bot: Bot, update: Update):
     else:
         bot.sendSticker(chat_id, args[1])
 
+def ping(bot: Bot, update: Update):
+    start_time = time.time()
+    bot.send_message(update.effective_chat.id, "Starting ping testing now!")
+    end_time = time.time()
+    ping_time = float(end_time - start_time)*1000
+    update.effective_message.reply_text(" Ping speed was : {}ms".format(ping_time))
+
 
 MARKDOWN_HELP = """
 Markdown is a very powerful formatting tool supported by telegram. {} has some enhancements, to make sure that \
@@ -441,6 +448,7 @@ INFO_HANDLER = DisableAbleCommandHandler("info", info, pass_args=True)
 STICKERID_HANDLER = DisableAbleCommandHandler("stickerid", stickerid)
 GETSTICKER_HANDLER = DisableAbleCommandHandler("getsticker", getsticker)
 
+PING_HANDLER = DisableAbleCommandHandler("ping", ping)
 ECHO_HANDLER = CommandHandler("echo", echo, filters=Filters.user(OWNER_ID))
 STIKER_HANDLER = CommandHandler("stiker", stiker, filters=Filters.user(OWNER_ID))
 MD_HELP_HANDLER = CommandHandler("markdownhelp", markdown_help, filters=Filters.private)
@@ -448,6 +456,7 @@ MD_HELP_HANDLER = CommandHandler("markdownhelp", markdown_help, filters=Filters.
 STATS_HANDLER = CommandHandler("stats", stats, filters=CustomFilters.sudo_filter)
 
 dispatcher.add_handler(ID_HANDLER)
+dispatcher.add_handler(PING_HANDLER)
 dispatcher.add_handler(IP_HANDLER)
 dispatcher.add_handler(TIME_HANDLER)
 dispatcher.add_handler(RUNS_HANDLER)
