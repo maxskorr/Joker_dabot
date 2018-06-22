@@ -23,7 +23,6 @@ Hi {}, my name is {}! If you have any questions on how to use me, read /help and
 I'm a group manager bot maintained by [this thug](tg://user?id={}). I'm built in python3, using the \
 python-telegram-bot library, and am fully opensource - you can find what makes me tick \
 [here](github.com/Yasir-sifdiqui/Joker_dabot)!
-
 [Click Here To Add Me In Your Groups](https://telegram.me/Joker_dabot?startgroup=add)
 You can find the list of available commands with /help.
 
