@@ -24,6 +24,7 @@ I'm a group manager bot maintained by [this thug](tg://user?id={}). I'm built in
 python-telegram-bot library, and am fully opensource - you can find what makes me tick \
 [here](github.com/Yasir-sifdiqui/Joker_dabot)!
 
+[Click here to add me in your groups](https://telegram.me/Joker_dabot?startgroup=add)
 You can find the list of available commands with /help.
 
 If you're enjoying using me, and/or would like to help me survive in the wild, hit /donate to help fund/upgrade my VPS!
