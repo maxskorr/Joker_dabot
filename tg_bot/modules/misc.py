@@ -375,12 +375,13 @@ def stiker(bot: Bot, update: Update):
     else:
         bot.sendSticker(chat_id, args[1])
 
+    
 def ping(bot: Bot, update: Update):
     start_time = time.time()
-    bot.send_message(update.effective_chat.id, "Starting ping testing now!")
+    sent = bot.send_message(update.effective_chat.id, "Pong!")
     end_time = time.time()
-    ping_time = float(end_time - start_time)*1000
-    update.effective_message.reply_text(" Ping speed was : {}ms".format(ping_time))
+    ping_time = end_time - start_time
+    sent.edit_text("Pong!\n{}s".format(ping_time))
 
 
 MARKDOWN_HELP = """
