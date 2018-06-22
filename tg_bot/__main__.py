@@ -18,11 +18,11 @@ from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
-Hi {}, my name is {}! If you have any questions on how to use me, read /help.
+Hi {}, my name is {}! If you have any questions on how to use me, read /help and i also have a news channel, @Jokerharleynews for announcements on new features, downtime, etc.
 
-I'm a group manager bot maintained by [this wonderful person](tg://user?id={}). I'm built in python3, using the \
+I'm a group manager bot maintained by [this thug](tg://user?id={}). I'm built in python3, using the \
 python-telegram-bot library, and am fully opensource - you can find what makes me tick \
-[here](github.com/PaulSonOfLars/tgbot)!
+[here](github.com/Yasir-sifdiqui/Joker_dabot)!
 
 You can find the list of available commands with /help.
 
@@ -48,7 +48,7 @@ And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
-If you want to donate, PM [Ayra Hikari](t.me/AyraHikari), and ask for donate. \
+If you want to donate, PM [Yasirsiddiqui](t.me/Yasirsiddiqui), and ask for donate. \
 If you really want to donate, it could really help me to upgrade my VPS. \
 """
 
