@@ -383,6 +383,22 @@ def ping(bot: Bot, update: Update):
     ping_time = end_time - start_time
     sent.edit_text("Pong!\n{}s".format(ping_time))
 
+def credits(bot: Bot, update: Update): 
+    reply_msg = "The main credits Goes to 
+Paul Larsen = The main owner 
+Shabier = For Sban and Banme 
+Atechnohazard = For gmute and Sudo functions 
+Anirudh Gupta = For some commits from his bot's source 
+Sicrs = For some sudo functions like Leave,getlink 
+Kev = For Ping and etc
+Maverick = For Runban 
+If I forget someone then sorry :(
+    message = update.effective_message
+    if message.reply_to_message:
+        message.reply_to_message.reply_text(reply_msg)
+    else:
+        message.reply_text(reply_msg, quote=False)
+
 
 MARKDOWN_HELP = """
 Markdown is a very powerful formatting tool supported by telegram. {} has some enhancements, to make sure that \
@@ -450,6 +466,7 @@ STICKERID_HANDLER = DisableAbleCommandHandler("stickerid", stickerid)
 GETSTICKER_HANDLER = DisableAbleCommandHandler("getsticker", getsticker)
 
 PING_HANDLER = DisableAbleCommandHandler("ping", ping)
+CREDITS_HANDLER = CommandHandler("credits", credits, filters=Filters.private)
 ECHO_HANDLER = CommandHandler("echo", echo, filters=CustomFilters.sudo_filter)
 STIKER_HANDLER = CommandHandler("stiker", stiker, filters=Filters.user(OWNER_ID))
 MD_HELP_HANDLER = CommandHandler("markdownhelp", markdown_help, filters=Filters.private)
@@ -458,6 +475,7 @@ STATS_HANDLER = CommandHandler("stats", stats, filters=CustomFilters.sudo_filter
 
 dispatcher.add_handler(ID_HANDLER)
 dispatcher.add_handler(PING_HANDLER)
+dispatcher.add_handler(CREDITS_HANDLER)
 dispatcher.add_handler(IP_HANDLER)
 dispatcher.add_handler(TIME_HANDLER)
 dispatcher.add_handler(RUNS_HANDLER)
