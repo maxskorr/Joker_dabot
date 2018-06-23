@@ -392,7 +392,7 @@ Anirudh Gupta = For some commits from his bot's source
 Sicrs = For some sudo functions like Leave,getlink 
 Kev = For Ping and etc
 Maverick = For Runban 
-If I forget someone then sorry :(
+If I forget someone then sorry :("
     message = update.effective_message
     if message.reply_to_message:
         message.reply_to_message.reply_text(reply_msg)
