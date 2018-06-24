@@ -18,15 +18,18 @@ from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
-Hi {}, my name is {}! If you have any questions on how to use me, read /help and i also have a news channel, @Jokerharleynews for announcements on new features, downtime, etc.
+Hi {}, my name is {}! If you have any questions on how to use me, read /help.
 
-I'm a group manager bot maintained by [this thug](tg://user?id={}). I'm built in python3, using the \
-python-telegram-bot library, and am fully opensource - you can find what makes me tick \
-[here](github.com/Yasir-siddiqui/Joker_dabot)!
-[Click Here To Add Me In Your Groups](https://telegram.me/Joker_dabot?startgroup=add)
-You can find the list of available commands with /help.
+I'm a group manager bot maintained by [this thug](tg://user?id={}). You can find what makes me tick \
+[here](github.com/shanutheflash/tgbot)!
+
+Feel free to submit pull requests on github, or to contact [my master](t.me/shanuflash), with any bugs, questions \
+or feature requests you might have :)
+I also have a news channel, @Jokerharleynews for announcements on new features, downtime, etc.
 
 If you're enjoying using me, and/or would like to help me survive in the wild, hit /donate to help fund/upgrade my VPS!
+
+[Click here to add me in your groups](https://telegram.me/Joker_dabot?startgroup=add)
 """
 
 HELP_STRINGS = """
